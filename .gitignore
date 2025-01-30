@@ -4,4 +4,3 @@
 /test-ledger
 programs/.DS_Store
 .DS_Store
-programs/anchor-escrow/src/contexts/take.rs
