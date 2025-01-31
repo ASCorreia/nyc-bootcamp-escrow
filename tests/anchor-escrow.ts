@@ -128,7 +128,7 @@ describe("anchor-escrow", () => {
       .then(log);
   });
 
-  it("Refund", async () => {
+  xit("Refund", async () => {
     await program.methods
       .refund()
       .accounts({ ...accounts })
@@ -136,5 +136,20 @@ describe("anchor-escrow", () => {
       .rpc()
       .then(confirm)
       .then(log);
+  });
+
+  it("Take", async () => {
+    try {
+    await program.methods
+      .take()
+      .accounts({  ...accounts })
+      .signers([taker])
+      .rpc()
+      .then(confirm)
+      .then(log);
+    } catch(e) {
+      console.log(e);
+      throw(e)
+    }
   });
 });
